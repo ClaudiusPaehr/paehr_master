@@ -1,10 +1,4 @@
-
-\chapter*{Anhang A}
-\addcontentsline{toc}{chapter}{Anhang A}
-\thispagestyle{plain}
-Wir wollen hier die allgemeinen verwendeten Algorithmen zur Nachvollziehbarkeit der Ergebnisse auflisten. Der Code ist in GNU octave geschrieben. Strukturell geben wir zun‰chst die allgemeinen Algorithmen an, es folgt dann eine Beispielanwendung der Partikelfilter (neuronaler Partikelfilter und Ensemble Partikelfitler) im allgemeinen Fall sowie eine Beispielanwendung im Fall mit unvollst‰ndigen Signalen. Diese Beispielanwendung kann durch ein Compilieren der Funktionen bis zu dem Punkt der Anwendung ausgef¸hrt werden. 
-\pagestyle{plain}
-\begin{lstlisting}
+#Wir wollen hier die allgemeinen verwendeten Algorithmen zur Nachvollziehbarkeit der Ergebnisse auflisten. Der Code ist in GNU  #geschrieben. Strukturell geben wir zun√§chst die allgemeinen Algorithmen an, es folgt dann eine Beispielanwendung der #Partikelfilter (neuronaler Partikelfilter und Ensemble Partikelfitler) im allgemeinen Fall sowie eine Beispielanwendung im Fall #mit unvollst√§ndigen Signalen. Diese Beispielanwendung kann durch ein Compilieren der Funktionen bis zu dem Punkt der Anwendung #ausgef√ºhrt werden. 
 ##############################################################
 #Allgemeine Definition der generativen Funktionen
 ##############################################################
@@ -320,5 +314,3 @@ title("Wichtung des habtischen Signals")
 xlim([0 5000])
 ylim([0 1])
 ################################################################
-
-\end{lstlisting}
