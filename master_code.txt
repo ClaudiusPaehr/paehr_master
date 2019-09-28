@@ -310,7 +310,7 @@ title("Wichtung des auditiven Signals")
 xlim([0 5000])
 subplot (5, 1, 5)
 plot (weights(2000:7000,3));
-title("Wichtung des habtischen Signals")
+title("Wichtung des haptischen Signals")
 xlim([0 5000])
 ylim([0 1])
 ################################################################
