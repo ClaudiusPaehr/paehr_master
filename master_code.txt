@@ -57,7 +57,7 @@ endfunction
 #p_x: Pfad des Hidden State
 ##############################################################
 #Output
-#Integrierte Beobachtung des Hidden State
+#Pfad der Beobachtung
 ##############################################################
 function p_g1 = path_g1(time,delta,sigma,p_x)
   p = zeros(1, time);
@@ -112,10 +112,10 @@ endfunction
 ##############################################################
 
 ##############################################################
-#Partikelupdate im Ensemble Kalmanfilter
+#Partikelupdate im ensemble Kalman-Bucy Filter
 ##############################################################
 #Beispiel: 
-#[z,W] = EnKF(partarr(:,i-1), ... 
+#[z,W] = EnKBF(partarr(:,i-1), ... 
 #[p_g1(i)-p_g1(i-1);p_g2(i)-p_g2(i-1)], ...
 #1/200, particles,[1/0.01,0;0,1/0.01]);
 #Siehe unten fuer ein ausfuehrliches Beispiel
@@ -129,7 +129,7 @@ endfunction
 #Output
 #Partikelupdate um einen Zeitschritt im EnKF
 ##############################################################
-function [z,W] = EnKF(zdelta,d_g,delta,N,sig)
+function [z,W] = EnKBF(zdelta,d_g,delta,N,sig)
  gz = g(zdelta);
  W = cov(zdelta,gz)*sig;
  nov = zeros(columns(gz),N);
@@ -155,7 +155,7 @@ p_x = path_m(50000,1/200,1,3,1);
 p_g1 = path_g1(50000,1/200,0.1,p_x);
 p_g2 = path_g2(50000,1/200,0.1,p_x);
 
-#Anwendung des Partikelfilters, alternativ ersetze npf mit EnKF
+#Anwendung des Partikelfilters, alternativ ersetze npf mit EnKBF
 time = 5000;
 particles = 50;
 partarr = zeros(particles,time);
@@ -273,6 +273,7 @@ p_gb = path_gb(10000,1/200,0.1,bl,p_x);
 p_g2 = path_g2(10000,1/200,0.1,p_x);
 p_g3 = path_g3(10000,1/200,0.1,p_x);
 
+#Analoge Anwendung für den EnKBF
 time = 7000;
 particles = 50;
 partarr = zeros(particles,time);
